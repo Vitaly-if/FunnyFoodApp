@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Adminius/AndroidStudioProjects/FunnyFood/app/src/main/res/drawable/ic_ddd.xml" value="0.2555" />
+        <entry key="..\:/Users/Adminius/AndroidStudioProjects/FunnyFood/app/src/main/res/drawable/ic_icon_clock.xml" value="0.2555" />
+        <entry key="..\:/Users/Adminius/AndroidStudioProjects/FunnyFood/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Adminius/AndroidStudioProjects/FunnyFood/app/src/main/res/layout/recipe_item_layout.xml" value="0.4" />
       </map>
     </option>
