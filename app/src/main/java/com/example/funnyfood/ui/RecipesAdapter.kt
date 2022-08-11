@@ -7,9 +7,9 @@ import com.example.funnyfood.R
 
 class RecipesAdapter() : RecyclerView.Adapter<RecipeBaseViewHolder>() {
 
-    private val items = ArrayList<RecipeUiModel.Base>()
+    private val items = ArrayList<RecipeUiModel>()
 
-    fun setData(list: List<RecipeUiModel.Base>) {
+    fun setData(list: List<RecipeUiModel>) {
         items.clear()
         items.addAll(list)
         notifyDataSetChanged()
