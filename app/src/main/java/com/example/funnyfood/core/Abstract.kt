@@ -6,7 +6,8 @@ abstract class Abstract {
 
         fun map(mapper: M): T
     }
+    interface Mapper {
+    }
 }
 
-interface Mapper {
-}
+
