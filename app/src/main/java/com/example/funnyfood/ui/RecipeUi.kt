@@ -4,7 +4,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.funnyfood.R
 
-sealed class RecipeUiModel {
+sealed class RecipeUi {
     open fun show(
         textContainer: TextView,
         textContainerTwo: TextView,
@@ -20,7 +20,7 @@ sealed class RecipeUiModel {
         private val timeOfPreparation: String,
         private val urlImage: Int
     ) :
-        RecipeUiModel() {
+        RecipeUi() {
 
         override fun show(text: TextView, textTwo: TextView, imageContainer: ImageView) {
             text.text = name
