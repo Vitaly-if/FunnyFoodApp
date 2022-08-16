@@ -7,6 +7,9 @@ import com.example.funnyfood.core.FunnyFoodApp
 import com.example.funnyfood.databinding.ActivityMainBinding
 import com.example.funnyfood.ui.RecipeUi
 import com.example.funnyfood.ui.RecipesAdapter
+import okhttp3.mockwebserver.MockResponse
+import okhttp3.mockwebserver.MockWebServer
+import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,8 +17,9 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         val view = binding.root
         setContentView(view)
-      val viewModel = (application as FunnyFoodApp).mainViewModel
-      viewModel.fetchBooks()
+        val viewModel = (application as FunnyFoodApp).mainViewModel
+        viewModel.fetchBooks()
+        viewModel.observe()
         var adapter = RecipesAdapter()
         binding.recipeRecyclerView.adapter = adapter
         val list = listOf(
@@ -24,7 +28,8 @@ class MainActivity : AppCompatActivity() {
             RecipeUi.Base("recipe3", "time", 4),
         )
         adapter.setData(list)
-    }
 
+
+    }
 
 }
