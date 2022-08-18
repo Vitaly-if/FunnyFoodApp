@@ -11,8 +11,10 @@ import com.example.funnyfood.data.cloud.RecipeService
 import com.example.funnyfood.domain.BaseRecipeDataToDomainMapper
 import com.example.funnyfood.domain.BaseRecipesDataToDomainMapper
 import com.example.funnyfood.domain.RecipesInteractor
+import com.example.funnyfood.ui.BaseRecipesDomainToUiMapper
 import com.example.funnyfood.ui.MainViewModel
 import com.example.funnyfood.ui.RecipesCommunication
+import com.example.funnyfood.ui.ResourceProvider
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

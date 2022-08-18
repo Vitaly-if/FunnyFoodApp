@@ -28,6 +28,7 @@ sealed class RecipeUi {
             imageContainer.setImageResource(R.drawable.rec_img_01)
         }
     }
+    class Fail(private val message: String) : RecipeUi()
 
     interface TextContainer {
 
