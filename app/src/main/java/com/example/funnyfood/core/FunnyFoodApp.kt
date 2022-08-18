@@ -8,6 +8,7 @@ import com.example.funnyfood.data.cache.RecipesCacheDataSource
 import com.example.funnyfood.data.cloud.RecipeCloudDataSource
 import com.example.funnyfood.data.cloud.RecipeMockServer
 import com.example.funnyfood.data.cloud.RecipeService
+import com.example.funnyfood.domain.BaseRecipeDataToDomainMapper
 import com.example.funnyfood.domain.BaseRecipesDataToDomainMapper
 import com.example.funnyfood.domain.RecipesInteractor
 import com.example.funnyfood.ui.MainViewModel
@@ -65,7 +66,7 @@ class FunnyFoodApp: Application() {
         )
         val recipesInteractor = RecipesInteractor.Base(
             recipesRepository,
-            BaseRecipesDataToDomainMapper(BaseRecipesDataToDomainMapper())
+            BaseRecipesDataToDomainMapper(BaseRecipeDataToDomainMapper())
             )
         val communication = RecipesCommunication.Base()
         val resourceProvider = ResourceProvider.Base(this)
