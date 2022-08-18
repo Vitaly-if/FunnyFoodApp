@@ -8,7 +8,7 @@ import com.example.funnyfood.data.cache.RecipesCacheDataSource
 import com.example.funnyfood.data.cloud.RecipeCloudDataSource
 import com.example.funnyfood.data.cloud.RecipeMockServer
 import com.example.funnyfood.data.cloud.RecipeService
-import com.example.funnyfood.domain.BaseRecipesToDomainMapper
+import com.example.funnyfood.domain.BaseRecipesDataToDomainMapper
 import com.example.funnyfood.domain.RecipesInteractor
 import com.example.funnyfood.ui.MainViewModel
 import com.example.funnyfood.ui.RecipesCommunication
@@ -17,10 +17,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 import io.realm.Realm
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import retrofit2.Retrofit
-import kotlin.concurrent.thread
 
 class FunnyFoodApp: Application() {
 
@@ -68,7 +65,7 @@ class FunnyFoodApp: Application() {
         )
         val recipesInteractor = RecipesInteractor.Base(
             recipesRepository,
-            BaseRecipesToDomainMapper(BaseRecipeToDomainMapper())
+            BaseRecipesDataToDomainMapper(BaseRecipesDataToDomainMapper())
             )
         val communication = RecipesCommunication.Base()
         val resourceProvider = ResourceProvider.Base(this)
