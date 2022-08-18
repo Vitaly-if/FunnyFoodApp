@@ -3,7 +3,7 @@ package com.example.funnyfood.domain
 import com.example.funnyfood.core.Abstract
 import com.example.funnyfood.ui.RecipeUi
 
-sealed class RecipeDomain : Abstract.Object<RecipeUi, RecipeDomainToUiMapper>
+sealed class RecipeDomain : Abstract.Object<RecipeUi, RecipeDomainToUiMapper> {
 
     data class Base(
         private val id: Int,
@@ -16,3 +16,4 @@ sealed class RecipeDomain : Abstract.Object<RecipeUi, RecipeDomainToUiMapper>
         }
 
     }
+}
