@@ -16,15 +16,16 @@ sealed class RecipeUi {
 
 
     class Base(
+        private val id: Int,
         private val name: String,
-        private val timeOfPreparation: String,
-        private val urlImage: Int
+        private val urlImage: String,
+        private val cookingTime: String
     ) :
         RecipeUi() {
 
         override fun show(text: TextView, textTwo: TextView, imageContainer: ImageView) {
             text.text = name
-            textTwo.text = timeOfPreparation
+            textTwo.text = urlImage
             imageContainer.setImageResource(R.drawable.rec_img_01)
         }
     }
