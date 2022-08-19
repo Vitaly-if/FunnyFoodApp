@@ -41,7 +41,7 @@ class FunnyFoodApp: Application() {
             })
             .build()
         Thread.sleep(500)
-        Log.i("MyTag", "${recipeMockServer.getBaseUrlMockServer()} after init retrofit")
+       // Log.i("MyTag", "${recipeMockServer.getBaseUrlMockServer()} after init retrofit")
         var retrofit = Retrofit.Builder()
             .baseUrl(recipeMockServer.getBaseUrlMockServer())
             .client(client)
@@ -51,7 +51,7 @@ class FunnyFoodApp: Application() {
 
         val gson = Gson()
         val cloudDataSource = RecipeCloudDataSource.Base(service, gson)
-        Log.i("MyTag", "${recipeMockServer.getBaseUrlMockServer()} before init retrofit")
+       // Log.i("MyTag", "${recipeMockServer.getBaseUrlMockServer()} before init retrofit")
 
         val caheDataSource = RecipesCacheDataSource.Base(RealmProvider.Base(), RecipeDataToDbMapper.Base())
         val toRecipeMapper = ToRecipeDataMapper.Base()

@@ -3,6 +3,7 @@ package com.example.funnyfood
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.example.funnyfood.core.FunnyFoodApp
 import com.example.funnyfood.databinding.ActivityMainBinding
 import com.example.funnyfood.ui.RecipeUi
@@ -19,15 +20,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         val viewModel = (application as FunnyFoodApp).mainViewModel
         viewModel.fetchBooks()
-        viewModel.observe()
+
         var adapter = RecipesAdapter()
         binding.recipeRecyclerView.adapter = adapter
         val list = listOf(
-            RecipeUi.Base("recipe", "time", 4),
-            RecipeUi.Base("recipe2", "time", 4),
-            RecipeUi.Base("recipe3", "time", 4),
+            RecipeUi.Base(1,"recipe", "time", "4"),
+            RecipeUi.Base(2,"recipe2", "time", "4"),
+            RecipeUi.Base(3,"recipe3", "time", "4"),
         )
-        adapter.setData(list)
+        viewModel.observe(this, Observer {
+            adapter.setData(it)
+        })
+        //adapter.setData(list)
 
 
     }
