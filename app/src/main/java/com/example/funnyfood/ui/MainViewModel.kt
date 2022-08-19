@@ -1,24 +1,33 @@
 package com.example.funnyfood.ui
 
-import android.content.Context
-import android.util.Log
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.funnyfood.domain.RecipesDomainToUiMapper
+import com.example.funnyfood.domain.RecipesInteractor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
-import java.io.InputStreamReader
 
-class MainViewModel(val Mapper: Context) : ViewModel() {
+class MainViewModel(
+    private val recipesInteractor: RecipesInteractor,
+    private val mapper: RecipesDomainToUiMapper,
+    private val communication: RecipesCommunication
+) : ViewModel() {
 
     fun fetchBooks() {
-Log.i("MyTag", "fetchBooks MainViewModel")
+        viewModelScope.launch(Dispatchers.IO) {
+            val resultDomain = recipesInteractor.fetchRecipes()
+            val resultUI = resultDomain.map(mapper)
+            withContext(Dispatchers.Main) {
+                resultUI.map(communication)
+            }
+        }
     }
 
-    fun observe() {
-
+    fun observe(owner: LifecycleOwner, observer: Observer<List<RecipeUi>>) {
+        communication.observe(owner, observer)
 
     }
 }
