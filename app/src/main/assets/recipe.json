@@ -2,7 +2,57 @@
   {
     "id": 1,
     "name": "Лосось в соусе терияки",
-    "urlImg": "2700",
-    "cookingTime": "https://cdn.lifehacker.ru/wp-content/uploads/2020/06/shutterstock_1674157888-1_1591696887.jpg"
+    "time": 2700,
+    "favorites": [
+      {
+        "username": "anonymous"
+      },
+      {
+        "username": "john"
+      }
+    ],
+    "imageUrl": "https://cdn.lifehacker.ru/wp-content/uploads/2020/06/shutterstock_1674157888-1_1591696887.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Лосось в соусе терияки",
+    "time": 2700,
+    "favorites": [
+      {
+        "username": "anonymous"
+      },
+      {
+        "username": "john"
+      }
+    ],
+    "imageUrl": "https://cdn.lifehacker.ru/wp-content/uploads/2020/06/shutterstock_1674157888-1_1591696887.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Лосось в соусе терияки",
+    "time": 2700,
+    "favorites": [
+      {
+        "username": "anonymous"
+      },
+      {
+        "username": "john"
+      }
+    ],
+    "imageUrl": "https://cdn.lifehacker.ru/wp-content/uploads/2020/06/shutterstock_1674157888-1_1591696887.jpg"
+  },
+  {
+  "id": 4,
+  "name": "Лосось в соусе терияки",
+  "time": 2700,
+    "favorites": [
+      {
+        "username": "anonymous"
+      },
+      {
+        "username": "john"
+      }
+    ],
+  "imageUrl": "https://cdn.lifehacker.ru/wp-content/uploads/2020/06/shutterstock_1674157888-1_1591696887.jpg"
   }
 ]

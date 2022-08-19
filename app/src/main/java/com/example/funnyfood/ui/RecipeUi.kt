@@ -25,7 +25,7 @@ sealed class RecipeUi {
 
         override fun show(text: TextView, textTwo: TextView, imageContainer: ImageView) {
             text.text = name
-            textTwo.text = urlImage
+            textTwo.text = cookingTime
             imageContainer.setImageResource(R.drawable.rec_img_01)
         }
     }
