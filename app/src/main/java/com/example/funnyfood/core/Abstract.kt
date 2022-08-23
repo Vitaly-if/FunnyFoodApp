@@ -7,6 +7,7 @@ abstract class Abstract {
         fun map(mapper: M): T
     }
     interface Mapper {
+        class Empty: Mapper
     }
 }
 
