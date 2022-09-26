@@ -1,16 +1,31 @@
 package com.example.funnyfood.ui
 
-import android.content.Context
-import android.util.Log
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.example.funnyfood.core.Read
 
-class MainViewModel(val Mapper: Context) : ViewModel() {
+class MainViewModel(
+    private val navigator: Read<Int>,
+    private val communication: NavigationCommunication
+) : ViewModel() {
 
-    fun fetchBooks() {
-Log.i("MyTag", "fetchBooks MainViewModel")
+    fun init() {
+        communication.map(navigator.read())
     }
 
-    fun observe() {
-
+    fun observe(owner: LifecycleOwner, observer: Observer<Int>) {
+        communication.observe(owner, observer)
     }
+
+    fun navigateBack(): Boolean {
+        val currentScreen = navigator.read()
+        val exit = currentScreen == 0
+        if (!exit) {
+            val newScreen = currentScreen - 1
+            communication.map(newScreen)
+        }
+        return exit
+    }
+
 }
