@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.funnyfood.core.Abstract
 
-interface RecipesCommunication: Abstract.Mapper {
+interface RecipesCommunication : Abstract.Mapper {
     fun map(recipesUi: List<RecipeUi>)
     fun observe(owner: LifecycleOwner, observer: Observer<List<RecipeUi>>)
 
@@ -16,7 +16,7 @@ interface RecipesCommunication: Abstract.Mapper {
         }
 
         override fun observe(owner: LifecycleOwner, observer: Observer<List<RecipeUi>>) {
-             listLiveData.observe(owner, observer)
+            listLiveData.observe(owner, observer)
         }
     }
 }

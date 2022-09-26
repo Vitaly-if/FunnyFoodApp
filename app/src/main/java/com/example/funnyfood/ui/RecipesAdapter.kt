@@ -14,12 +14,10 @@ class RecipesAdapter() : RecyclerView.Adapter<RecipeBaseViewHolder>() {
         items.addAll(list)
         notifyDataSetChanged()
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeBaseViewHolder {
 
        return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recipe_item_layout, parent, false))
     }
-
     override fun onBindViewHolder(holder: RecipeBaseViewHolder, position: Int) {
         holder.onBind(items[position])
     }

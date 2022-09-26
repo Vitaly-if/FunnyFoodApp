@@ -22,7 +22,9 @@ class FunnyFoodApp : Application() {
     private companion object {
         const val BASE_URL = "https://bible-go-api.rkeplin.com/v1/"
     }
+
     lateinit var mainViewModel: MainViewModel
+    lateinit var recipesViewModel: RecipeListViewModel
 
     override fun onCreate() {
         super.onCreate()
@@ -67,10 +69,14 @@ class FunnyFoodApp : Application() {
         )
         val communication = RecipesCommunication.Base()
         val resourceProvider = ResourceProvider.Base(this)
-        mainViewModel = MainViewModel(
-            recipesInteractor,
-            BaseRecipesDomainToUiMapper(resourceProvider, BaseRecipeDomainToUiMapper()),
-            communication
+        val navigator = Navigator.Base(this)
+        val navigationCommunication = NavigationCommunication.Base()
+        mainViewModel = MainViewModel(navigator, navigationCommunication)
+
+        recipesViewModel = RecipeListViewModel(
+            recipesInteractor, BaseRecipesDomainToUiMapper(
+                resourceProvider, BaseRecipeDomainToUiMapper()
+            ), communication, navigator, navigationCommunication
         )
     }
 

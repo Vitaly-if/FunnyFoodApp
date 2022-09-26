@@ -3,31 +3,29 @@ package com.example.funnyfood.ui
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.example.funnyfood.domain.RecipesDomainToUiMapper
-import com.example.funnyfood.domain.RecipesInteractor
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import com.example.funnyfood.core.Read
 
 class MainViewModel(
-    private val recipesInteractor: RecipesInteractor,
-    private val mapper: RecipesDomainToUiMapper,
-    private val communication: RecipesCommunication
+    private val navigator: Read<Int>,
+    private val communication: NavigationCommunication
 ) : ViewModel() {
 
-    fun fetchBooks() {
-        viewModelScope.launch(Dispatchers.IO) {
-            val resultDomain = recipesInteractor.fetchRecipes()
-            val resultUI = resultDomain.map(mapper)
-            withContext(Dispatchers.Main) {
-                resultUI.map(communication)
-            }
-        }
+    fun init() {
+        communication.map(navigator.read())
     }
 
-    fun observe(owner: LifecycleOwner, observer: Observer<List<RecipeUi>>) {
+    fun observe(owner: LifecycleOwner, observer: Observer<Int>) {
         communication.observe(owner, observer)
-
     }
+
+    fun navigateBack(): Boolean {
+        val currentScreen = navigator.read()
+        val exit = currentScreen == 0
+        if (!exit) {
+            val newScreen = currentScreen - 1
+            communication.map(newScreen)
+        }
+        return exit
+    }
+
 }
