@@ -1,17 +1,18 @@
 package com.example.funnyfood.domain.detail
 
-import com.example.funnyfood.data.detail.RecipeDetailRepository
+import com.example.funnyfood.data.detail.RecipesDetailDataToDomainMapper
+import com.example.funnyfood.data.detail.RecipesDetailRepository
 
-interface RecipeDetailInteractor {
+interface RecipesDetailInteractor {
 
-    suspend fun fetchRecipeDetail(): RecipeDetailDomain
+    suspend fun fetchRecipeDetail(): RecipesDetailDomain
 
     class Base(
-        private val recipeDetailRepository: RecipeDetailRepository,
-        private val mapper: RecipeDetailDataToDomainMapper
-    ) : RecipeDetailInteractor {
-        override suspend fun fetchRecipeDetail(): RecipeDetailDomain {
-            return recipeDetailRepository.fetchRecipeDetail().map(mapper)
+        private val recipesDetailRepository: RecipesDetailRepository,
+        private val mapper: RecipesDetailDataToDomainMapper
+    ) : RecipesDetailInteractor {
+        override suspend fun fetchRecipeDetail(): RecipesDetailDomain {
+            return recipesDetailRepository.fetchRecipesDetail().map(mapper)
         }
     }
 }

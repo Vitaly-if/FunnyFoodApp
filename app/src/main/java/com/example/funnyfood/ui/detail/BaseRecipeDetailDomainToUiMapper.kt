@@ -1,9 +1,9 @@
 package com.example.funnyfood.ui.detail
 
-import com.example.funnyfood.domain.detail.comment.CommentDomain
 import com.example.funnyfood.domain.detail.cookingstep.CookingStepDomain
 import com.example.funnyfood.domain.detail.ingredient.IngredientDomain
 import com.example.funnyfood.domain.detail.RecipeDetailDomainToUiMapper
+import com.example.funnyfood.domain.detail.comment.CommentDomain
 import com.example.funnyfood.ui.detail.comment.BaseCommentDomainToUiMapper
 import com.example.funnyfood.ui.detail.comment.BaseCommentsDomainToUiMapper
 import com.example.funnyfood.ui.detail.cookingstep.BaseCookingStepDomainToUiMapper

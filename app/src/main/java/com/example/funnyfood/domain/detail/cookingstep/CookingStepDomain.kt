@@ -1,7 +1,6 @@
 package com.example.funnyfood.domain.detail.cookingstep
 
 import com.example.funnyfood.core.Abstract
-import com.example.funnyfood.domain.detail.RecipeListDomain
 import com.example.funnyfood.ui.detail.cookingstep.CookingStepUi
 
 data class CookingStepDomain(
