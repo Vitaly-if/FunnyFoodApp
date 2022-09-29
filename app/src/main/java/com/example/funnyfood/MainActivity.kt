@@ -3,16 +3,10 @@ package com.example.funnyfood
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.example.funnyfood.core.FunnyFoodApp
 import com.example.funnyfood.databinding.ActivityMainBinding
 import com.example.funnyfood.ui.Navigator.Base.Screens.Companion.RECIPE_LIST_SCREEN
-import com.example.funnyfood.ui.RecipeUi
-import com.example.funnyfood.ui.RecipesAdapter
-import com.example.funnyfood.ui.RecipesFragment
-import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
-import java.io.InputStreamReader
+import com.example.funnyfood.ui.recipes.RecipesFragment
 import java.lang.IllegalStateException
 
 class MainActivity : AppCompatActivity() {

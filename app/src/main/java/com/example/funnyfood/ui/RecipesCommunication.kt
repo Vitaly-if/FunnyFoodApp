@@ -4,6 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.funnyfood.core.Abstract
+import com.example.funnyfood.ui.recipes.RecipeUi
 
 interface RecipesCommunication : Abstract.Mapper {
     fun map(recipesUi: List<RecipeUi>)
