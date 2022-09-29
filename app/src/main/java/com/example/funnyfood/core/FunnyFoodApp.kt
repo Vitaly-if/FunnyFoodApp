@@ -2,14 +2,19 @@ package com.example.funnyfood.core
 
 import android.app.Application
 import com.example.funnyfood.data.*
-import com.example.funnyfood.data.cache.RealmProvider
-import com.example.funnyfood.data.cache.RecipesCacheDataSource
-import com.example.funnyfood.data.cloud.RecipeCloudDataSource
-import com.example.funnyfood.data.cloud.RecipeService
-import com.example.funnyfood.domain.BaseRecipeDataToDomainMapper
-import com.example.funnyfood.domain.BaseRecipesDataToDomainMapper
-import com.example.funnyfood.domain.RecipesInteractor
+import com.example.funnyfood.data.recipes.*
+import com.example.funnyfood.data.recipes.cache.RealmProvider
+import com.example.funnyfood.data.recipes.cache.RecipesCacheDataSource
+import com.example.funnyfood.data.recipes.cloud.RecipeCloudDataSource
+import com.example.funnyfood.data.recipes.cloud.RecipeService
+import com.example.funnyfood.domain.recipes.BaseRecipeDataToDomainMapper
+import com.example.funnyfood.domain.recipes.BaseRecipesDataToDomainMapper
+import com.example.funnyfood.domain.recipes.RecipesInteractor
 import com.example.funnyfood.ui.*
+import com.example.funnyfood.ui.detail.RecipeDetailViewModel
+import com.example.funnyfood.ui.recipes.BaseRecipeDomainToUiMapper
+import com.example.funnyfood.ui.recipes.BaseRecipesDomainToUiMapper
+import com.example.funnyfood.ui.recipes.RecipeListViewModel
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -25,6 +30,7 @@ class FunnyFoodApp : Application() {
 
     lateinit var mainViewModel: MainViewModel
     lateinit var recipesViewModel: RecipeListViewModel
+    lateinit var recipeDetailViewModel: RecipeDetailViewModel
 
     override fun onCreate() {
         super.onCreate()
@@ -78,6 +84,13 @@ class FunnyFoodApp : Application() {
                 resourceProvider, BaseRecipeDomainToUiMapper()
             ), communication, navigator, navigationCommunication
         )
+
+        recipeDetailViewModel = RecipeDetailViewModel(
+            recipeDetailInteractor, BaseRecipeDetailDomainToUiMapper(
+                resourceProvider
+            ), communication, navigator, navigationCommunication
+        )
+
     }
 
 }
