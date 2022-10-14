@@ -12,9 +12,8 @@ sealed class RecipeUi {
     ) {
     }
 
-    open fun show(text: TextView, textTwo: TextView, image: ImageView) {}
-
-
+    open fun show(text: TextView, textTwo: TextView, image: ImageView) = Unit
+    open fun open(recipeListener: RecipesAdapter.RecipeListener) = Unit
     class Base(
         private val id: Int,
         private val name: String,
@@ -28,7 +27,12 @@ sealed class RecipeUi {
             textTwo.text = cookingTime
             imageContainer.setImageResource(R.drawable.rec_img_01)
         }
+
+        override fun open(recipeListener: RecipesAdapter.RecipeListener) {
+            recipeListener.showRecipe(id)
+        }
     }
+
     class Fail(private val message: String) : RecipeUi()
 
     interface TextContainer {
