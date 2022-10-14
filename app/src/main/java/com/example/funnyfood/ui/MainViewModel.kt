@@ -16,6 +16,7 @@ class MainViewModel(
 
     fun observe(owner: LifecycleOwner, observer: Observer<Int>) {
         communication.observe(owner, observer)
+
     }
 
     fun navigateBack(): Boolean {
