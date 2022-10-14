@@ -1,6 +1,6 @@
-package com.example.funnyfood.data.recipes.cloud
+package com.example.funnyfood.data.detail.cloud
 
 import com.google.gson.annotations.SerializedName
 
-data class FavoritesDTO(
+data class FavoriteDTO(
     @SerializedName("username") val userName: String)

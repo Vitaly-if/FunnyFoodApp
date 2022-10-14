@@ -2,18 +2,30 @@ package com.example.funnyfood.core
 
 import android.app.Application
 import com.example.funnyfood.data.*
+import com.example.funnyfood.data.detail.RecipesDetailDataToDomainMapper
+import com.example.funnyfood.data.detail.RecipesDetailRepository
+import com.example.funnyfood.data.detail.cloud.RecipeDetailCloudDataSource
+import com.example.funnyfood.data.detail.cloud.RecipeDetailService
+import com.example.funnyfood.data.detail.cloud.RecipesDetailCloudMapper
 import com.example.funnyfood.data.recipes.*
 import com.example.funnyfood.data.recipes.cache.RealmProvider
 import com.example.funnyfood.data.recipes.cache.RecipesCacheDataSource
 import com.example.funnyfood.data.recipes.cloud.RecipeCloudDataSource
 import com.example.funnyfood.data.recipes.cloud.RecipeService
+import com.example.funnyfood.domain.detail.BaseRecipeDetailDataToDomainMapper
+import com.example.funnyfood.domain.detail.BaseRecipesDetailDataToDomainMapper
+import com.example.funnyfood.domain.detail.RecipesDetailInteractor
 import com.example.funnyfood.domain.recipes.BaseRecipeDataToDomainMapper
 import com.example.funnyfood.domain.recipes.BaseRecipesDataToDomainMapper
 import com.example.funnyfood.domain.recipes.RecipesInteractor
 import com.example.funnyfood.ui.*
+import com.example.funnyfood.ui.detail.BaseRecipeDetailDomainToUiMapper
+import com.example.funnyfood.ui.detail.BaseRecipesDetailDomainToUiMapper
 import com.example.funnyfood.ui.detail.RecipeDetailViewModel
+import com.example.funnyfood.ui.detail.RecipesDetailCommunication
 import com.example.funnyfood.ui.recipes.BaseRecipeDomainToUiMapper
 import com.example.funnyfood.ui.recipes.BaseRecipesDomainToUiMapper
+import com.example.funnyfood.ui.recipes.RecipeCache
 import com.example.funnyfood.ui.recipes.RecipeListViewModel
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -25,7 +37,7 @@ import retrofit2.Retrofit
 class FunnyFoodApp : Application() {
 
     private companion object {
-        const val BASE_URL = "https://bible-go-api.rkeplin.com/v1/"
+        const val BASE_URL = "http://foodapi.dzolotov.tech/"
     }
 
     lateinit var mainViewModel: MainViewModel
@@ -50,7 +62,7 @@ class FunnyFoodApp : Application() {
             .build()
 
         val service = retrofit.create(RecipeService::class.java)
-
+        val serviceDetail = retrofit.create(RecipeDetailService::class.java)
         val gson = Gson()
 
         val cloudDataSource = if (useMocks)
@@ -78,17 +90,37 @@ class FunnyFoodApp : Application() {
         val navigator = Navigator.Base(this)
         val navigationCommunication = NavigationCommunication.Base()
         mainViewModel = MainViewModel(navigator, navigationCommunication)
-
+        val recipeCache = RecipeCache.Base(resourceProvider)
         recipesViewModel = RecipeListViewModel(
             recipesInteractor, BaseRecipesDomainToUiMapper(
                 resourceProvider, BaseRecipeDomainToUiMapper()
-            ), communication, navigator, navigationCommunication
+            ), communication, recipeCache, navigator, navigationCommunication
         )
 
+        val cloudRecipeDetailDataSource = if (useMocks) RecipeDetailCloudDataSource.Mock(resources, gson)
+        else
+        RecipeDetailCloudDataSource.Base(serviceDetail, gson)
+
+        val recipeDetailDataToDomainMapper = BaseRecipeDetailDataToDomainMapper()
+        val recipesDetailDataToDomainMapper =
+            BaseRecipesDetailDataToDomainMapper(recipeDetailDataToDomainMapper)
+        val toRecipeDetailMapper = ToRecipeDetailMapper.Base(recipeCache)
+        val recipesDetailCloudMapper = RecipesDetailCloudMapper.Base(toRecipeDetailMapper)
+        val recipeDetailRepository = RecipesDetailRepository.Base(
+            cloudRecipeDetailDataSource,
+            recipesDetailCloudMapper,
+            recipeCache,
+        )
+        val recipeDetailInteractor = RecipesDetailInteractor.Base(
+            recipeDetailRepository,
+
+            recipesDetailDataToDomainMapper
+        )
+        val communicationRecipesDetail = RecipesDetailCommunication.Base()
         recipeDetailViewModel = RecipeDetailViewModel(
-            recipeDetailInteractor, BaseRecipeDetailDomainToUiMapper(
-                resourceProvider
-            ), communication, navigator, navigationCommunication
+            recipeDetailInteractor, BaseRecipesDetailDomainToUiMapper(
+                resourceProvider, BaseRecipeDetailDomainToUiMapper()
+            ), communicationRecipesDetail, navigator, navigationCommunication
         )
 
     }
