@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import com.example.funnyfood.core.FunnyFoodApp
 import com.example.funnyfood.databinding.ActivityMainBinding
+import com.example.funnyfood.ui.Navigator.Base.Screens.Companion.RECIPE_DETAIL_SCREEN
 import com.example.funnyfood.ui.Navigator.Base.Screens.Companion.RECIPE_LIST_SCREEN
+import com.example.funnyfood.ui.detail.RecipeDetailFragment
 import com.example.funnyfood.ui.recipes.RecipesFragment
 import java.lang.IllegalStateException
 
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.observe(this) {
             val fragment = when (it) {
                 RECIPE_LIST_SCREEN -> RecipesFragment()
+                RECIPE_DETAIL_SCREEN -> RecipeDetailFragment()
                 else -> throw IllegalStateException("screen id undefined $it")
             }
             supportFragmentManager.beginTransaction()
