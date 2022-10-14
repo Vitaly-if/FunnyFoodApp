@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Лосось в соусе терияки",
-    "time": 2700,
+    "duration": 2700,
     "favorites": [
       {
         "username": "anonymous"
@@ -11,7 +11,7 @@
         "username": "john"
       }
     ],
-    "imageUrl": "1.png",
+    "photo": "1.png",
     "ingredients": [
       {
         "name": "Соевый соус",
@@ -76,7 +76,7 @@
   {
     "id": 2,
     "name": "Лосось в томате",
-    "time": 2700,
+    "duration": 2000,
     "favorites": [
       {
         "username": "anonymous"
@@ -85,7 +85,7 @@
         "username": "john"
       }
     ],
-    "imageUrl": "1.png",
+    "photo": "1.png",
     "ingredients": [
       {
         "name": "Соевый соус",
@@ -150,7 +150,7 @@
   {
     "id": 3,
     "name": "Лосось в соусе терияки",
-    "time": 2700,
+    "duration": 1500,
     "favorites": [
       {
         "username": "anonymous"
@@ -159,7 +159,7 @@
         "username": "john"
       }
     ],
-    "imageUrl": "1.png",
+    "photo": "1.png",
     "ingredients": [
       {
         "name": "Соевый соус",
@@ -224,7 +224,7 @@
   {
     "id": 4,
     "name": "Лосось в соусе терияки",
-    "time": 2700,
+    "duration": 700,
     "favorites": [
       {
         "username": "anonymous"
@@ -233,7 +233,7 @@
         "username": "john"
       }
     ],
-    "imageUrl": "1.png",
+    "photo": "1.png",
     "ingredients": [
       {
         "name": "Соевый соус",
