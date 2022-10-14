@@ -21,7 +21,13 @@ class RecipesFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = RecipesAdapter()
+        val adapter = RecipesAdapter(
+            object : RecipesAdapter.RecipeListener {
+                override fun showRecipe(id: Int) {
+                    viewModel.showRecipe(id)
+                }
+            }
+        )
 
         recyclerView?.adapter = adapter
 
