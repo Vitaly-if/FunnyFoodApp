@@ -10,7 +10,6 @@ interface FavoritesDomainToUiMapper : Abstract.Mapper {
         override fun map(list: List<FavoriteDomain>): Boolean {
             list.forEach { if(it.map(mapper)) return true }
             return false
-
         }
     }
 }
