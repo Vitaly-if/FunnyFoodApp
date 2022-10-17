@@ -1,7 +1,7 @@
 package com.example.funnyfood.data.recipes.cloud
 
 import com.example.funnyfood.core.Abstract
-import com.example.funnyfood.data.detail.cloud.FavoriteDTO
+import com.example.funnyfood.data.detail.cloud.favorites.FavoriteDTO
 import com.example.funnyfood.data.recipes.RecipeData
 import com.example.funnyfood.data.recipes.ToRecipeDataMapper
 import com.google.gson.annotations.SerializedName
