@@ -35,10 +35,15 @@ class BaseRecipeDetailDataToDomainMapper : RecipeDetailDataToDomainMapper {
         val baseCookingStepsDataToDomainMapper =
             BaseCookingStepsDataToDomainMapper(baseCookingStepDataToDomainMapper)
         val baseFavoriteDataToDomainMapper = FavoriteDataToDomain.Base()
-        val baseFavoritesDataToDomainMapper = FavoritesDataToDomain.Base(baseFavoriteDataToDomainMapper)
+        val baseFavoritesDataToDomainMapper =
+            FavoritesDataToDomain.Base(baseFavoriteDataToDomainMapper)
         return RecipeDetailDomain(
-            id, name, urlImage, cookingTime,
-            baseFavoritesDataToDomainMapper.map(favorite), baseIngredientsDataToDomainMapper.map(ingredients),
+            id,
+            name,
+            urlImage,
+            cookingTime,
+            baseFavoritesDataToDomainMapper.map(favorite),
+            baseIngredientsDataToDomainMapper.map(ingredients),
             baseCookingStepsDataToDomainMapper.map(cookingSteps),
             baseCommentsDataToDomainMapper.map(comments)
         )
