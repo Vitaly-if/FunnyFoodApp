@@ -3,6 +3,7 @@ package com.example.funnyfood.domain.detail
 import com.example.funnyfood.core.Abstract
 import com.example.funnyfood.domain.detail.comment.CommentDomain
 import com.example.funnyfood.domain.detail.cookingstep.CookingStepDomain
+import com.example.funnyfood.domain.detail.favorite.FavoriteDomain
 import com.example.funnyfood.domain.detail.ingredient.IngredientDomain
 import com.example.funnyfood.ui.detail.RecipeDetailUi
 
@@ -11,7 +12,7 @@ data class RecipeDetailDomain(
     private val name: String,
     private val urlImage: String,
     private val cookingTime: String,
-    private val favorite: Boolean,
+    private val favorite: List<FavoriteDomain>,
     private val ingredients: List<IngredientDomain>,
     private val cookingSteps: List<CookingStepDomain>,
     private val comments: List<CommentDomain>

@@ -4,6 +4,9 @@ import com.example.funnyfood.domain.detail.cookingstep.CookingStepDomain
 import com.example.funnyfood.domain.detail.ingredient.IngredientDomain
 import com.example.funnyfood.domain.detail.RecipeDetailDomainToUiMapper
 import com.example.funnyfood.domain.detail.comment.CommentDomain
+import com.example.funnyfood.domain.detail.favorite.FavoriteDomain
+import com.example.funnyfood.domain.detail.favorite.FavoriteDomainToUiMapper
+import com.example.funnyfood.domain.detail.favorite.FavoritesDomainToUiMapper
 import com.example.funnyfood.ui.detail.comment.BaseCommentDomainToUiMapper
 import com.example.funnyfood.ui.detail.comment.BaseCommentsDomainToUiMapper
 import com.example.funnyfood.ui.detail.cookingstep.BaseCookingStepDomainToUiMapper
@@ -18,7 +21,7 @@ class BaseRecipeDetailDomainToUiMapper : RecipeDetailDomainToUiMapper {
         name: String,
         urlImage: String,
         cookingTime: String,
-        favorite: Boolean,
+        favorite: List<FavoriteDomain>,
         ingredients: List<IngredientDomain>,
         cookingSteps: List<CookingStepDomain>,
         comments: List<CommentDomain>
@@ -30,9 +33,11 @@ class BaseRecipeDetailDomainToUiMapper : RecipeDetailDomainToUiMapper {
         val baseCommentsDomainToUiMapper = BaseCommentsDomainToUiMapper(baseCommentDomainToUiMapper)
         val baseCookingStepDomainToUiMapper = BaseCookingStepDomainToUiMapper()
         val baseCookingStepsDomainToUiMapper = BaseCookingStepsDomainToUiMapper(baseCookingStepDomainToUiMapper)
+        val baseFavoriteDomainToUiMapper = FavoriteDomainToUiMapper.Base("UserLogin")//todo fix login user
+        val baseFavoritesDomainToUiMapper = FavoritesDomainToUiMapper.Base(baseFavoriteDomainToUiMapper)
         return RecipeDetailUi.Base(
             id, name, urlImage, cookingTime,
-            favorite, baseIngredientsDomainToUiMapper.map(ingredients),
+            baseFavoritesDomainToUiMapper.map(favorite), baseIngredientsDomainToUiMapper.map(ingredients),
             baseCookingStepsDomainToUiMapper.map(cookingSteps),
         baseCommentsDomainToUiMapper.map(comments)
         )
