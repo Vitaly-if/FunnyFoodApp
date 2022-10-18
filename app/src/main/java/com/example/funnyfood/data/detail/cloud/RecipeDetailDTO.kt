@@ -3,6 +3,10 @@ package com.example.funnyfood.data.detail.cloud
 import com.example.funnyfood.core.Abstract
 import com.example.funnyfood.data.ToRecipeDetailMapper
 import com.example.funnyfood.data.detail.RecipeDetailData
+import com.example.funnyfood.data.detail.cloud.comment.CommentDTO
+import com.example.funnyfood.data.detail.cloud.cookingstep.CookingStepDTO
+import com.example.funnyfood.data.detail.cloud.favorites.FavoriteDTO
+import com.example.funnyfood.data.detail.cloud.ingredient.IngredientDTO
 import com.google.gson.annotations.SerializedName
 
 data class RecipeDetailDTO(
@@ -16,6 +20,9 @@ data class RecipeDetailDTO(
     @SerializedName("photo") val imageUrl: String
 ) : Abstract.Object<RecipeDetailData, ToRecipeDetailMapper> {
     override fun map(mapper: ToRecipeDetailMapper): RecipeDetailData {
-        return mapper.map(id)
+        return mapper.map(
+            id, name, imageUrl, cookingTime, favoritesDTO, ingredientsDTO,
+            cookingStepsDTO, commentsDTO
+        )
     }
 }

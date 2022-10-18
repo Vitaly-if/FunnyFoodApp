@@ -1,8 +1,9 @@
 package com.example.funnyfood.domain.detail
 
 import com.example.funnyfood.core.Abstract
-import com.example.funnyfood.domain.detail.comment.CommentData
+import com.example.funnyfood.domain.detail.comment.CommentDomain
 import com.example.funnyfood.domain.detail.cookingstep.CookingStepDomain
+import com.example.funnyfood.domain.detail.favorite.FavoriteDomain
 import com.example.funnyfood.domain.detail.ingredient.IngredientDomain
 import com.example.funnyfood.ui.detail.RecipeDetailUi
 
@@ -12,9 +13,9 @@ interface RecipeDetailDomainToUiMapper : Abstract.Mapper {
         name: String,
         urlImage: String,
         cookingTime: String,
-        favorite: Boolean,
+        favorite: List<FavoriteDomain>,
         ingredients: List<IngredientDomain>,
         cookingSteps: List<CookingStepDomain>,
-        comments: List<CommentData>
+        comments: List<CommentDomain>
     ): RecipeDetailUi
 }
