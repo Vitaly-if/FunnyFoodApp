@@ -6,7 +6,7 @@ import com.example.funnyfood.ui.detail.RecipesDetailUi
 
 sealed class RecipesDetailDomain :
     Abstract.Object<RecipesDetailUi, RecipesDetailDomainToUiMapper> {
-    data class Success(private val recipes: List<RecipeDetailDomain>) : RecipesDetailDomain {
+    data class Success(private val recipes: List<RecipeDetailDomain>) : RecipesDetailDomain() {
         override fun map(mapper: RecipesDetailDomainToUiMapper): RecipesDetailUi {
             return mapper.map(recipes)
         }

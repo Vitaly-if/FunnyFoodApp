@@ -6,8 +6,8 @@ import retrofit2.http.Path
 
 interface RecipeDetailService {
 
-    @GET("recipe/{id}")
+    @GET("recipe/{id}/")
     suspend fun fetchDetailRecipe(
         @Path("id") recipeId: Int
-    ) : ResponseBody
+    ): ResponseBody
 }
