@@ -6,4 +6,5 @@ data class RecipesDetailUi(
     private val list: List<RecipeDetailUi>
 ) : Abstract.Object<Unit, RecipesDetailCommunication> {
     override fun map(mapper: RecipesDetailCommunication) = mapper.map(list)
+
 }
