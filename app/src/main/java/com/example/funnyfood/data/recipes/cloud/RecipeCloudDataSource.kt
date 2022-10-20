@@ -16,10 +16,8 @@ interface RecipeCloudDataSource {
             object : TypeToken<List<RecipeDTO>>() {}.type
         )
 
-
         protected abstract suspend fun getDataAsString(): String
     }
-
 
     class Base(
         private val service: RecipeService,
