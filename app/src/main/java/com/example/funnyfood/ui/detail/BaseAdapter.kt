@@ -13,14 +13,14 @@ abstract class BaseAdapter<E, T : BaseViewHolder<E>> :
     override fun getItemCount() = list.size
 
     override fun map(data: List<E>) {
-        val diffCallback = diffUtilCallback(list, data)
+        val diffCallback = diffUtilCallback(list, data)// todo add diffUtilCallback
         val result = DiffUtil.calculateDiff(diffCallback)
         list.clear()
         list.addAll(data)
         result.dispatchUpdatesTo(this)
     }
 
-    abstract fun diffUtilCallback(list: ArrayList<E>, data: List<E>): DiffUtil.Callback
+    abstract fun diffUtilCallback(list: List<E>, data: List<E>): DiffUtil.Callback
 
     override fun onBindViewHolder(holder: T, position: Int) =
         holder.bind(list[position])
