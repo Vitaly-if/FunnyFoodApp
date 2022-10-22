@@ -13,7 +13,7 @@ abstract class BaseAdapter<E, T : BaseViewHolder<E>> :
     override fun getItemCount() = list.size
 
     override fun map(data: List<E>) {
-        val diffCallback = diffUtilCallback(list, data)// todo add diffUtilCallback
+        val diffCallback = diffUtilCallback(list, data)
         val result = DiffUtil.calculateDiff(diffCallback)
         list.clear()
         list.addAll(data)
