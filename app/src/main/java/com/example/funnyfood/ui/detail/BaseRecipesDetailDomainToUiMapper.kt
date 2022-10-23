@@ -18,6 +18,6 @@ class BaseRecipesDetailDomainToUiMapper(
     }
 
     override fun map(e: ErrorType): RecipesDetailUi {
-        return RecipesDetailUi(listOf(RecipeDetailUi.Fail("")))
+        return RecipesDetailUi(listOf(RecipeDetailUi.Fail("Error connection")))
     }
 }
