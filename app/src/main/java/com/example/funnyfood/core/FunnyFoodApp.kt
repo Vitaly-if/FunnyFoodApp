@@ -104,7 +104,7 @@ class FunnyFoodApp : Application() {
         val recipeDetailDataToDomainMapper = BaseRecipeDetailDataToDomainMapper()
         val recipesDetailDataToDomainMapper =
             BaseRecipesDetailDataToDomainMapper(recipeDetailDataToDomainMapper)
-        val toRecipeDetailMapper = ToRecipeDetailMapper.Base(recipeCache)
+        val toRecipeDetailMapper = ToRecipeDetailMapper.Base()
         val recipesDetailCloudMapper = RecipesDetailCloudMapper.Base(toRecipeDetailMapper)
         val recipeDetailRepository = RecipesDetailRepository.Base(
             cloudRecipeDetailDataSource,

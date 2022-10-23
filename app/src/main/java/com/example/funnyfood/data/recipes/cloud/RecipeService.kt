@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface RecipeService {
 
-    @GET("recipes")
+    @GET("recipe")
     suspend fun fetchRecipes(): ResponseBody
 }
