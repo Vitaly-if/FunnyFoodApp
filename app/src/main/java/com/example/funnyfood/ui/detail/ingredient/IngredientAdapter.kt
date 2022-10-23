@@ -12,6 +12,7 @@ class IngredientAdapter : BaseAdapter<IngredientUi, IngredientViewHolder>() {
             R.layout.recipe_ingredient_item.makeView(parent)
         )
     }
+
     override fun diffUtilCallback(
         list: List<IngredientUi>,
         data: List<IngredientUi>,
@@ -20,8 +21,6 @@ class IngredientAdapter : BaseAdapter<IngredientUi, IngredientViewHolder>() {
     inner class IngredientDiffUtilCallback(
         oldList: List<IngredientUi>,
         newList: List<IngredientUi>
-    ) : DiffUtilCallback<IngredientUi>(oldList, newList) {
-
-    }
+    ) : DiffUtilCallback<IngredientUi>(oldList, newList)
 
 }
