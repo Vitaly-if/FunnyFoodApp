@@ -1,5 +1,6 @@
 package com.example.funnyfood.ui.recipes
 
+import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.funnyfood.R
@@ -26,6 +27,7 @@ sealed class RecipeUi {
             text.text = name
             textTwo.text = cookingTime
             imageContainer.setImageResource(R.drawable.rec_img_01)
+
         }
 
         override fun open(recipeListener: RecipesAdapter.RecipeListener) {
