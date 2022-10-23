@@ -3,4 +3,7 @@
     <string name="no_connection_message">No connection</string>
     <string name="service_unavailable_message">Service unavailable</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="start_cooking">Начать готовить</string>
+    <string name="steps_cooking">Шаги приготовления</string>
+    <string name="ingredients">Ингредиенты</string>
 </resources>
