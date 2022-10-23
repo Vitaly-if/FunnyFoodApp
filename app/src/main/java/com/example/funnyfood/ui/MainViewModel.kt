@@ -21,6 +21,7 @@ class MainViewModel(
 
     fun navigateBack(): Boolean {
         val currentScreen = navigator.read()
+        println("navigation back $currentScreen")
         val exit = currentScreen == 0
         if (!exit) {
             val newScreen = currentScreen - 1
