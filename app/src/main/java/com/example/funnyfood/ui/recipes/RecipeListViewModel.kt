@@ -8,6 +8,7 @@ import com.example.funnyfood.core.Save
 import com.example.funnyfood.domain.recipes.RecipesDomainToUiMapper
 import com.example.funnyfood.domain.recipes.RecipesInteractor
 import com.example.funnyfood.ui.NavigationCommunication
+import com.example.funnyfood.ui.Navigator
 import com.example.funnyfood.ui.RecipesCommunication
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,7 +18,8 @@ class RecipeListViewModel(
     private val recipesInteractor: RecipesInteractor,
     private val mapper: RecipesDomainToUiMapper,
     private val communication: RecipesCommunication,
-    private val navigator : Save<Int>,
+    private val recipeCache: RecipeCache,
+    private val navigator: Save<Int>,
     private val navigationCommunication: NavigationCommunication
 ) : ViewModel() {
 
@@ -35,7 +37,14 @@ class RecipeListViewModel(
         communication.observe(owner, observer)
     }
 
-    init {
+    fun showRecipe(id: Int) {
+        recipeCache.save(id)
+        navigationCommunication.map(Navigator.Base.Screens.RECIPE_DETAIL_SCREEN)
+    }
+
+    fun init() {
+        navigator.save(Navigator.Base.Screens.RECIPE_LIST_SCREEN)
+        println("init")
         fetchBooks()
     }
 }
