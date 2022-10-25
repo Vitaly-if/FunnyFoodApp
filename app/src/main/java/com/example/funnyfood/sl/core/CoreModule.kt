@@ -1,4 +1,4 @@
-package com.example.funnyfood.sl
+package com.example.funnyfood.sl.core
 
 import android.content.Context
 import com.example.funnyfood.data.recipes.cache.RealmProvider
