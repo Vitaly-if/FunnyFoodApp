@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.ViewModel
 import com.example.funnyfood.core.FunnyFoodApp
 import com.example.funnyfood.databinding.ActivityMainBinding
 import com.example.funnyfood.ui.MainViewModel
@@ -37,9 +35,7 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, fragment)
                 .commit()
         }
-
         viewModel.init()
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
