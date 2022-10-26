@@ -32,8 +32,7 @@ class RecipesModule(private val coreModule: CoreModule) : BaseModule<RecipeListV
     )
 
     private fun getResipesRepository(): RecipesRepository {
-        val useMocks = true
-        val cloudDataSource = if (useMocks)
+        val cloudDataSource = if (coreModule.useMock)
             RecipeCloudDataSource.Mock(coreModule.resourceProvider.getResource(), coreModule.gson)
         else
             RecipeCloudDataSource.Base(
@@ -54,9 +53,8 @@ class RecipesModule(private val coreModule: CoreModule) : BaseModule<RecipeListV
         )
     }
 
-    private fun getRecipesCommunication(): RecipesCommunication {
-        return RecipesCommunication.Base()
-    }
+    private fun getRecipesCommunication() = RecipesCommunication.Base()
+
 }
 
 
