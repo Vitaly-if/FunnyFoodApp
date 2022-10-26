@@ -27,6 +27,7 @@ class CoreModule : BaseModule<MainViewModel> {
     lateinit var navigationCommunication: NavigationCommunication
     lateinit var recipeCache: RecipeCache
     private lateinit var retrofit: Retrofit
+    val useMock = true
 
     fun init(context: Context) {
         Realm.init(context)
