@@ -9,7 +9,6 @@ import com.example.funnyfood.domain.recipes.RecipesDomainToUiMapper
 import com.example.funnyfood.domain.recipes.RecipesInteractor
 import com.example.funnyfood.ui.NavigationCommunication
 import com.example.funnyfood.ui.Navigator
-import com.example.funnyfood.ui.RecipesCommunication
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -44,7 +43,6 @@ class RecipeListViewModel(
 
     fun init() {
         navigator.save(Navigator.Base.Screens.RECIPE_LIST_SCREEN)
-        println("init")
         fetchBooks()
     }
 }

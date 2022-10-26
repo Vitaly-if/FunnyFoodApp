@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        viewModel = (application as FunnyFoodApp).mainViewModel
+        viewModel = (application as FunnyFoodApp).getMainViewModel()
         viewModel.observe(this) {
             val fragment = when (it) {
                 RECIPE_LIST_SCREEN -> RecipesFragment()
