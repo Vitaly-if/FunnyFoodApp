@@ -1,4 +1,4 @@
-package com.example.funnyfood.data.recipes.cache
+package com.example.funnyfood.core
 
 import io.realm.Realm
 
