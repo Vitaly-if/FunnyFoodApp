@@ -1,7 +1,7 @@
 package com.example.funnyfood.sl.core
 
 import android.content.Context
-import com.example.funnyfood.data.recipes.cache.RealmProvider
+import com.example.funnyfood.core.RealmProvider
 import com.example.funnyfood.ui.MainViewModel
 import com.example.funnyfood.ui.NavigationCommunication
 import com.example.funnyfood.ui.Navigator
