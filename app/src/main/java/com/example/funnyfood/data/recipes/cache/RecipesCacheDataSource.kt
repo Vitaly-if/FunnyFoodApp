@@ -1,7 +1,10 @@
 package com.example.funnyfood.data.recipes.cache
 
+import com.example.funnyfood.core.DbWrapper
+import com.example.funnyfood.core.RealmProvider
 import com.example.funnyfood.data.recipes.RecipeData
 import com.example.funnyfood.data.recipes.RecipeDataToDbMapper
+import io.realm.Realm
 
 interface RecipesCacheDataSource {
 
@@ -18,7 +21,6 @@ interface RecipesCacheDataSource {
             realmProvider.provider().use { realm ->
                 val recipeDb = realm.where(RecipeDB::class.java).findAll() ?: emptyList()
                 return realm.copyFromRealm(recipeDb)
-
             }
         }
 
@@ -26,12 +28,14 @@ interface RecipesCacheDataSource {
             realmProvider.provider().use { realm ->
                 realm.executeTransaction {
                     recipes.forEach { recipe ->
-                        recipe.mapTo(mapper, DbWrapper.Base(it))
-
+                        recipe.mapBy(mapper, RecipeDbWrapper(it))
                     }
                 }
             }
 
+        private inner class RecipeDbWrapper(realm: Realm) : DbWrapper.Base<RecipeDB>(realm) {
+            override fun dbClass(): Class<RecipeDB> = RecipeDB::class.java
+        }
     }
 
 
