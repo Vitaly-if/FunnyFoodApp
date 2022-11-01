@@ -8,7 +8,6 @@ import com.example.funnyfood.ui.Navigator
 import com.example.funnyfood.ui.ResourceProvider
 import com.example.funnyfood.ui.recipes.RecipeCache
 import com.google.gson.Gson
-import io.realm.Realm
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -30,7 +29,6 @@ class CoreModule : BaseModule<MainViewModel> {
     val useMock = true
 
     fun init(context: Context) {
-        Realm.init(context)
         val client = OkHttpClient.Builder()
             .connectTimeout(1, TimeUnit.MINUTES)
             .readTimeout(1, TimeUnit.MINUTES)
