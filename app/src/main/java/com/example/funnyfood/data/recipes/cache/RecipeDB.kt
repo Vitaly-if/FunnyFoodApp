@@ -6,7 +6,8 @@ import com.example.funnyfood.data.recipes.ToRecipeDataMapper
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class RecipeDB: RealmObject(), RecipeRealm, Abstract.Object<RecipeData, ToRecipeDataMapper> {
+open class RecipeDB : RealmObject, RecipeRealm, Abstract.Object<RecipeData, ToRecipeDataMapper> {
+
     @PrimaryKey
     var id: Int = -1
     var name: String = ""
@@ -15,6 +16,7 @@ open class RecipeDB: RealmObject(), RecipeRealm, Abstract.Object<RecipeData, ToR
 
     override fun map(mapper: ToRecipeDataMapper) = RecipeData(id, name, urlImg, cookingTime)
 }
+
 interface RecipeRealm {
     fun map(mapper: ToRecipeDataMapper): RecipeData
 }
