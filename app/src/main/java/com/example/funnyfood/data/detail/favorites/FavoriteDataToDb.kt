@@ -7,7 +7,9 @@ interface FavoriteDataToDb: Abstract.Mapper {
     fun map(name: String): FavoriteDB
     class Base(): FavoriteDataToDb {
         override fun map(name: String): FavoriteDB {
-            return FavoriteDB(name)
+            val favorite = FavoriteDB()
+            favorite.userName = name
+            return favorite
         }
     }
 }

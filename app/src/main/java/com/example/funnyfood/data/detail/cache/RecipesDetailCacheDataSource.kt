@@ -1,10 +1,9 @@
 package com.example.funnyfood.data.detail.cache
 
-import com.example.funnyfood.core.DbWrapper
 import com.example.funnyfood.core.RealmProvider
 import com.example.funnyfood.data.detail.RecipeDetailData
 import com.example.funnyfood.data.detail.RecipeDetailDataToDbMapper
-import io.realm.Realm
+import io.realm.query
 
 interface RecipesDetailCacheDataSource {
 
@@ -14,29 +13,19 @@ interface RecipesDetailCacheDataSource {
 
     class Base(
         private val realmProvider: RealmProvider,
-        private val mapper: RecipeDetailDataToDbMapper
+        private val mapper: RecipeDetailDataToDbMapper,
     ) : RecipesDetailCacheDataSource {
+
         override fun fetchDetailRecipes(): List<RecipeDetailDB> {
-            realmProvider.provider().use { realm ->
-                val recipeDetailDB =
-                    realm.where(RecipeDetailDB::class.java).findAll() ?: emptyList()
-                return realm.copyFromRealm(recipeDetailDB)
-            }
+            return realmProvider.provider().query<RecipeDetailDB>().find()
         }
 
-        override fun saveDetailRecipes(recipes: List<RecipeDetailData>) =
-            realmProvider.provider().use { realm ->
-                realm.executeTransaction {
-                    recipes.forEach { recipe ->
-                        recipe.mapBy(mapper, RecipeDetailDbWrapper(realm))
-                    }
+        override fun saveDetailRecipes(recipes: List<RecipeDetailData>) {
+            realmProvider.provider().writeBlocking {
+                recipes.forEach { recipe ->
+                    copyToRealm(recipe.mapBy(mapper))
                 }
-
             }
-
-        private inner class RecipeDetailDbWrapper(realm: Realm) :
-            DbWrapper.Base<RecipeDetailDB>(realm) {
-            override fun dbClass(): Class<RecipeDetailDB> = RecipeDetailDB::class.java
         }
     }
 }

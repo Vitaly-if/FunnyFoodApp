@@ -1,7 +1,11 @@
 package com.example.funnyfood.sl.detail
 
 import com.example.funnyfood.data.ToRecipeDetailMapper
+import com.example.funnyfood.data.detail.RecipeDetailDataToDbMapper
+import com.example.funnyfood.data.detail.RecipesDetailCacheMapper
 import com.example.funnyfood.data.detail.RecipesDetailRepository
+import com.example.funnyfood.data.detail.ToRecipeDetailDataMapper
+import com.example.funnyfood.data.detail.cache.RecipesDetailCacheDataSource
 import com.example.funnyfood.data.detail.cloud.RecipeDetailCloudDataSource
 import com.example.funnyfood.data.detail.cloud.RecipeDetailService
 import com.example.funnyfood.data.detail.cloud.RecipesDetailCloudMapper
@@ -44,8 +48,10 @@ class RecipeDetailModule(private val coreModule: CoreModule) : BaseModule<Recipe
             )
         return RecipesDetailRepository.Base(
             cloudDataSource,
+            RecipesDetailCacheDataSource.Base(coreModule.realmProvider, RecipeDetailDataToDbMapper.Base()),
             RecipesDetailCloudMapper.Base(ToRecipeDetailMapper.Base()),
-            coreModule.recipeCache
+            coreModule.recipeCache,
+            RecipesDetailCacheMapper.Base(ToRecipeDetailDataMapper.Base())
         )
     }
 

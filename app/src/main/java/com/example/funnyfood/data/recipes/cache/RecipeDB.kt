@@ -6,7 +6,8 @@ import com.example.funnyfood.data.recipes.ToRecipeDataMapper
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class RecipeDB : RealmObject, RecipeRealm, Abstract.Object<RecipeData, ToRecipeDataMapper> {
+open class RecipeDB : RealmObject, RecipeRealm, Abstract.Object<RecipeData, ToRecipeDataMapper>
+{
 
     @PrimaryKey
     var id: Int = -1

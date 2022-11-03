@@ -9,7 +9,7 @@ data class RecipeData(
     private val name: String,
     private val urlImg: String,
     private val cookingTime: String
-) : Abstract.Mapper.ToDb.NotDbWrapper<RecipeDB, RecipeDataToDbMapper>,
+) : Abstract.Mapper.ToDb<RecipeDB, RecipeDataToDbMapper>,
     Abstract.Object<RecipeDomain, RecipeDataToDomainMapper> {
 
     override fun map(mapper: RecipeDataToDomainMapper): RecipeDomain {

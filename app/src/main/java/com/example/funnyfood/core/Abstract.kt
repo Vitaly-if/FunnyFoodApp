@@ -20,14 +20,8 @@ abstract class Abstract {
             fun map(data: S): R
         }
 
-        interface ToDb {
-            interface Wrapper<T : RealmObject, M : Mapper> : ToDb {
-                fun mapBy(mapper: M, db: DbWrapper<T>): T
-            }
-
-            interface NotDbWrapper<T : RealmObject, M : Mapper> : ToDb {
-                fun mapBy(mapper: M): T
-            }
+        interface ToDb<T : RealmObject, M : Mapper> {
+            fun mapBy(mapper: M): T
         }
 
         interface DomainToUi<S, T> : Data<S, T> {
