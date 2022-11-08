@@ -9,10 +9,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
-        app:titleTextColor="@color/white"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"/>
+        android:theme="@style/ThemeOverlay.AppCompat.Light"/>
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
