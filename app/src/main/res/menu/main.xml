@@ -7,5 +7,5 @@
         android:id="@+id/menu"
         android:icon="@drawable/round_outline"
         android:title="menu"
-        app:iconTint="@color/white"/>
+        app:iconTint="@color/black"/>
 </menu>

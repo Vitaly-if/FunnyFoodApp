@@ -6,4 +6,6 @@
     <string name="start_cooking">Начать готовить</string>
     <string name="steps_cooking">Шаги приготовления</string>
     <string name="ingredients">Ингредиенты</string>
+    <string name="image_timer">Image timer</string>
+    <string name="image_recipe">Image recipe</string>
 </resources>
