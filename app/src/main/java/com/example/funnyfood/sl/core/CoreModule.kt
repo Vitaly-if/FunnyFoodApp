@@ -1,6 +1,7 @@
 package com.example.funnyfood.sl.core
 
 import android.content.Context
+import com.example.funnyfood.core.DispatchersList
 import com.example.funnyfood.core.RealmProvider
 import com.example.funnyfood.ui.MainViewModel
 import com.example.funnyfood.ui.NavigationCommunication
@@ -25,6 +26,7 @@ class CoreModule : BaseModule<MainViewModel> {
     lateinit var navigator: Navigator
     lateinit var navigationCommunication: NavigationCommunication
     lateinit var recipeCache: RecipeCache
+    lateinit var dispatchers: DispatchersList
     private lateinit var retrofit: Retrofit
     val useMock = true
 
@@ -48,6 +50,7 @@ class CoreModule : BaseModule<MainViewModel> {
         recipeCache = RecipeCache.Base(resourceProvider)
         navigator = Navigator.Base(context)
         navigationCommunication = NavigationCommunication.Base()
+        dispatchers = DispatchersList.Base()
     }
 
     fun <T> makeService(clazz: Class<T>): T = retrofit.create(clazz)

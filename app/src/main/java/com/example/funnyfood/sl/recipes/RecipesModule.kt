@@ -23,9 +23,11 @@ class RecipesModule(private val coreModule: CoreModule) : BaseModule<RecipeListV
             getRecipesCommunication(),
             coreModule.recipeCache,
             coreModule.navigator,
-            coreModule.navigationCommunication
+            coreModule.navigationCommunication,
+            coreModule.dispatchers
         )
     }
+
     private fun getRecipesInteractor() = RecipesInteractor.Base(
         getResipesRepository(),
         BaseRecipesDataToDomainMapper(BaseRecipeDataToDomainMapper())
