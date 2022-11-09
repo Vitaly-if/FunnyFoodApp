@@ -4,6 +4,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.funnyfood.core.DispatchersList
 import com.example.funnyfood.core.Save
 import com.example.funnyfood.domain.recipes.RecipesDomainToUiMapper
 import com.example.funnyfood.domain.recipes.RecipesInteractor
@@ -19,14 +20,15 @@ class RecipeListViewModel(
     private val communication: RecipesCommunication,
     private val recipeCache: RecipeCache,
     private val navigator: Save<Int>,
-    private val navigationCommunication: NavigationCommunication
+    private val navigationCommunication: NavigationCommunication,
+    private val dispatchers: DispatchersList,
 ) : ViewModel() {
 
     fun fetchBooks() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatchers.io()) {
             val resultDomain = recipesInteractor.fetchRecipes()
             val resultUI = resultDomain.map(mapper)
-            withContext(Dispatchers.Main) {
+            withContext(dispatchers.ui()) {
                 resultUI.map(communication)
             }
         }
