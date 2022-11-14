@@ -7,7 +7,7 @@ import com.example.funnyfood.core.Read
 
 class MainViewModel(
     private val navigator: Read<Int>,
-    private val communication: NavigationCommunication
+    private val communication: NavigationCommunication,
 ) : ViewModel() {
 
     fun init() {
@@ -16,7 +16,6 @@ class MainViewModel(
 
     fun observe(owner: LifecycleOwner, observer: Observer<Int>) {
         communication.observe(owner, observer)
-
     }
 
     fun navigateBack(): Boolean {
