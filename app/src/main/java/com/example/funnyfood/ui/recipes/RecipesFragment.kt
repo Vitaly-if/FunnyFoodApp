@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.funnyfood.R
 import com.example.funnyfood.core.FunnyFoodApp
@@ -12,12 +13,10 @@ import com.example.funnyfood.ui.BaseFragment
 
 class RecipesFragment : BaseFragment() {
 
-    private lateinit var viewModel: RecipeListViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = (requireActivity().application as FunnyFoodApp).recipesViewModel
+    private val viewModelFactory by lazy {
+        (requireActivity().application as FunnyFoodApp).recipesFactory()
     }
+    private val viewModel by viewModels<RecipeListViewModel> { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,

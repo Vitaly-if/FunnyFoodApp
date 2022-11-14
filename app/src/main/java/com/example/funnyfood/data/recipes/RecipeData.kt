@@ -1,7 +1,6 @@
 package com.example.funnyfood.data.recipes
 
 import com.example.funnyfood.core.Abstract
-import com.example.funnyfood.data.recipes.cache.DbWrapper
 import com.example.funnyfood.data.recipes.cache.RecipeDB
 import com.example.funnyfood.domain.recipes.RecipeDomain
 
@@ -10,17 +9,14 @@ data class RecipeData(
     private val name: String,
     private val urlImg: String,
     private val cookingTime: String
-) : ToRecipeDb<RecipeDB, RecipeDataToDbMapper>,
+) : Abstract.Mapper.ToDb<RecipeDB, RecipeDataToDbMapper>,
     Abstract.Object<RecipeDomain, RecipeDataToDomainMapper> {
+
     override fun map(mapper: RecipeDataToDomainMapper): RecipeDomain {
         return mapper.map(id, name, urlImg, cookingTime)
     }
 
-    override fun mapTo(mapper: RecipeDataToDbMapper, db: DbWrapper): RecipeDB {
-        return mapper.mapToDb(id, name, urlImg, cookingTime, db)
+    override fun mapBy(mapper: RecipeDataToDbMapper): RecipeDB {
+        return mapper.mapBy(id, name, urlImg, cookingTime)
     }
-}
-
-interface ToRecipeDb<T, M : Abstract.Mapper> {
-    fun mapTo(mapper: M, db: DbWrapper): T
 }

@@ -4,12 +4,12 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.funnyfood.core.DispatchersList
 import com.example.funnyfood.core.Save
 import com.example.funnyfood.domain.recipes.RecipesDomainToUiMapper
 import com.example.funnyfood.domain.recipes.RecipesInteractor
 import com.example.funnyfood.ui.NavigationCommunication
 import com.example.funnyfood.ui.Navigator
-import com.example.funnyfood.ui.RecipesCommunication
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -20,14 +20,15 @@ class RecipeListViewModel(
     private val communication: RecipesCommunication,
     private val recipeCache: RecipeCache,
     private val navigator: Save<Int>,
-    private val navigationCommunication: NavigationCommunication
+    private val navigationCommunication: NavigationCommunication,
+    private val dispatchers: DispatchersList,
 ) : ViewModel() {
 
     fun fetchBooks() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatchers.io()) {
             val resultDomain = recipesInteractor.fetchRecipes()
             val resultUI = resultDomain.map(mapper)
-            withContext(Dispatchers.Main) {
+            withContext(dispatchers.ui()) {
                 resultUI.map(communication)
             }
         }
@@ -44,7 +45,6 @@ class RecipeListViewModel(
 
     fun init() {
         navigator.save(Navigator.Base.Screens.RECIPE_LIST_SCREEN)
-        println("init")
         fetchBooks()
     }
 }

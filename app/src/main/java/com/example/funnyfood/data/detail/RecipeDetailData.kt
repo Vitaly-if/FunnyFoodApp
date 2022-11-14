@@ -1,6 +1,7 @@
 package com.example.funnyfood.data.detail
 
 import com.example.funnyfood.core.Abstract
+import com.example.funnyfood.data.detail.cache.RecipeDetailDB
 import com.example.funnyfood.data.detail.comment.CommentData
 import com.example.funnyfood.data.detail.cookingstep.CookingStepData
 import com.example.funnyfood.data.detail.favorites.FavoriteData
@@ -15,10 +16,22 @@ data class RecipeDetailData(
     private val favorite: List<FavoriteData>,
     private val ingredients: List<IngredientData>,
     private val cookingSteps: List<CookingStepData>,
-    private val comments: List<CommentData>
-) : Abstract.Object<RecipeDetailDomain, RecipeDetailDataToDomainMapper> {
-    override fun map(mapper: RecipeDetailDataToDomainMapper) : RecipeDetailDomain {
-        return mapper.map(id, name, urlImage, cookingTime, favorite,
+    private val comments: List<CommentData>,
+) : Abstract.Object<RecipeDetailDomain, RecipeDetailDataToDomainMapper>,
+    Abstract.Mapper.ToDb<RecipeDetailDB,
+            RecipeDetailDataToDbMapper> {
+    override fun map(mapper: RecipeDetailDataToDomainMapper): RecipeDetailDomain {
+        return mapper.map(
+            id, name, urlImage, cookingTime, favorite,
+            ingredients, cookingSteps, comments
+        )
+    }
+
+    override fun mapBy(
+        mapper: RecipeDetailDataToDbMapper,
+    ): RecipeDetailDB {
+        return mapper.mapBy(
+            id, name, urlImage, cookingTime, favorite,
             ingredients, cookingSteps, comments
         )
     }
