@@ -2,297 +2,43 @@
   {
     "id": 1,
     "name": "Лосось в соусе терияки",
-    "duration": 2700,
-    "favorites": [
-      {
-        "username": "anonymous"
-      },
-      {
-        "username": "john"
-      }
-    ],
-    "photo": "1.png",
-    "ingredients": [
-      {
-        "name": "Соевый соус",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Вода",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Мёд",
-        "quantity": "3",
-        "unit": "ст. ложки"
-      }
-    ],
-    "cookingSteps": [
-      {
-        "order": 1,
-        "step": "В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.",
-        "duration": "06:00",
-        "status": null
-      },
-      {
-        "order": 2,
-        "step": "Поставьте на средний огонь и, помешивая, доведите до лёгкого кипения.",
-        "duration": "07:00",
-        "status": null
-      },
-      {
-        "order": 3,
-        "step": "Смешайте оставшуюся воду с крахмалом. Добавьте в кастрюлю и перемешайте.",
-        "duration": "06:00",
-        "status": null
-      }
-    ],
-    "comments": [
-      {
-        "author": "anna_obraztsova",
-        "avatar": "assets/images/avatar_1.png",
-        "date": "25.05.2022",
-        "comment": "Я не большой любитель рыбы, но решила приготовить по этому рецепту и просто влюбилась!",
-        "image": "assets/images/comment_image_1.png"
-      },
-      {
-        "author": "Реми",
-        "avatar": "assets/images/avatar_2.png",
-        "date": "05.06.2022",
-        "comment": "Я думаю, что если я — это то, что я ем, то мусор я есть не буду! Папа считал, что: «еда — это бензин. Будешь привередничать, не заправишь бак — мотор сдохнет. Так что заткнись и жри!»",
-        "image": ""
-      },
-      {
-        "author": "Антуан Эго",
-        "avatar": "assets/images/avatar_3.png",
-        "date": "26.06.2022",
-        "comment": "Я вовсе не любитель, я профессионал. Если еда так себе, я её не глотаю!",
-        "image": ""
-      }
-    ]
+    "duration": 45,
+    "photo": "https://s3-alpha-sig.figma.com/img/2a02/af01/3e816581720c9245aa5ffaad28e2d128?Expires=1668988800&Signature=E33zH0zJhYqsGxWNg3wGvs9USj2q3bslUmpsx7HUgBi~ECg9qGdOe02lBV4HC8knRxIjGXssWUokxgE50Hm2uGb4wcHawJyfa7m2WJw5cfAQP9~tzFNo0oOmEZiWQzZ3lf5rsC-jB-ym06cpwFVOJ90ipawxkdHMWk0PlfANAHDBu9oGvqFWAoEqCNID6y78K81~8uEJ7KJuUDSlS5-QBMpymuNQeEATUoHkKW-JqwAoZw2Xd2xr9gJc~9g-Us55My0ztGaM8-30v48lcneeQtVGFjTKmVO5y-YK8VhmsXaCZ5wqLEutyAQSBUdhyX0ZHc3HiseU5QXFEmX1ZkM9wg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
   },
   {
     "id": 2,
-    "name": "Лосось в томате",
-    "duration": 2000,
-    "favorites": [
-      {
-        "username": "anonymous"
-      },
-      {
-        "username": "john"
-      }
-    ],
-    "photo": "1.png",
-    "ingredients": [
-      {
-        "name": "Соевый соус",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Вода",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Мёд",
-        "quantity": "3",
-        "unit": "ст. ложки"
-      }
-    ],
-    "cookingSteps": [
-      {
-        "order": 1,
-        "step": "В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.",
-        "duration": "06:00",
-        "status": null
-      },
-      {
-        "order": 2,
-        "step": "Поставьте на средний огонь и, помешивая, доведите до лёгкого кипения.",
-        "duration": "07:00",
-        "status": null
-      },
-      {
-        "order": 3,
-        "step": "Смешайте оставшуюся воду с крахмалом. Добавьте в кастрюлю и перемешайте.",
-        "duration": "06:00",
-        "status": null
-      }
-    ],
-    "comments": [
-      {
-        "author": "anna_obraztsova",
-        "avatar": "assets/images/avatar_1.png",
-        "date": "25.05.2022",
-        "comment": "Я не большой любитель рыбы, но решила приготовить по этому рецепту и просто влюбилась!",
-        "image": "assets/images/comment_image_1.png"
-      },
-      {
-        "author": "Реми",
-        "avatar": "assets/images/avatar_2.png",
-        "date": "05.06.2022",
-        "comment": "Я думаю, что если я — это то, что я ем, то мусор я есть не буду! Папа считал, что: «еда — это бензин. Будешь привередничать, не заправишь бак — мотор сдохнет. Так что заткнись и жри!»",
-        "image": ""
-      },
-      {
-        "author": "Антуан Эго",
-        "avatar": "assets/images/avatar_3.png",
-        "date": "26.06.2022",
-        "comment": "Я вовсе не любитель, я профессионал. Если еда так себе, я её не глотаю!",
-        "image": ""
-      }
-    ]
+    "name": "Поке боул с сыром тофу",
+    "duration": 30,
+    "photo": "https://s3-alpha-sig.figma.com/img/4eea/f1ac/a491ff10a7c6e391d8e9fcaadd76a0dd?Expires=1668988800&Signature=ckeUJxrJpdyfmffvD24m-orNpPTB5zWgLj1g8gUgNU1U1Fd5Nyq6XAqAJcJUl9uNiwYBFENFu5EjxGTJkXTQWNxatYMiRjd0UcSx5zALt0oBg9RcNVPvgmTWCg2-ZD03LRCuje8dJuHd09UGj~ACh0tKL9ExeEO56v0UBo-nZzrUSnIfZVcaVqo~7IuPClooPdhF1-H8UKRDaT4W3bnspagsYb1H6G2kRioNx8qbxAnwq~6C9MRSIZRRBYXK3nbsDsZtTc63Bj4Feo0STWGyT9cCDZ~lcn2U~svlASXhY0qtCRFFs6lyH7g9nT4Z-tPDxHZg4kMUm~WPx5JzrgCHLA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
   },
   {
     "id": 3,
-    "name": "Лосось в соусе терияки",
-    "duration": 1500,
-    "favorites": [
-      {
-        "username": "anonymous"
-      },
-      {
-        "username": "john"
-      }
-    ],
-    "photo": "1.png",
-    "ingredients": [
-      {
-        "name": "Соевый соус",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Вода",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Мёд",
-        "quantity": "3",
-        "unit": "ст. ложки"
-      }
-    ],
-    "cookingSteps": [
-      {
-        "order": 1,
-        "step": "В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.",
-        "duration": "06:00",
-        "status": null
-      },
-      {
-        "order": 2,
-        "step": "Поставьте на средний огонь и, помешивая, доведите до лёгкого кипения.",
-        "duration": "07:00",
-        "status": null
-      },
-      {
-        "order": 3,
-        "step": "Смешайте оставшуюся воду с крахмалом. Добавьте в кастрюлю и перемешайте.",
-        "duration": "06:00",
-        "status": null
-      }
-    ],
-    "comments": [
-      {
-        "author": "anna_obraztsova",
-        "avatar": "assets/images/avatar_1.png",
-        "date": "25.05.2022",
-        "comment": "Я не большой любитель рыбы, но решила приготовить по этому рецепту и просто влюбилась!",
-        "image": "assets/images/comment_image_1.png"
-      },
-      {
-        "author": "Реми",
-        "avatar": "assets/images/avatar_2.png",
-        "date": "05.06.2022",
-        "comment": "Я думаю, что если я — это то, что я ем, то мусор я есть не буду! Папа считал, что: «еда — это бензин. Будешь привередничать, не заправишь бак — мотор сдохнет. Так что заткнись и жри!»",
-        "image": ""
-      },
-      {
-        "author": "Антуан Эго",
-        "avatar": "assets/images/avatar_3.png",
-        "date": "26.06.2022",
-        "comment": "Я вовсе не любитель, я профессионал. Если еда так себе, я её не глотаю!",
-        "image": ""
-      }
-    ]
+    "name": "Стейк из говядины по-грузински",
+    "duration": 75,
+    "photo": "https://s3-alpha-sig.figma.com/img/aeda/3659/1795131bf998bbec61201a2d81c2c1f7?Expires=1668988800&Signature=TkSJti7nRY5lqL4nxoirv07r4V9vjCM~DRiPTcTw-tBvWohrwoJJifcv0~UeizZntsY4E2PKOAhBY4jq5yz3lu1vDlbagN2zVFEi1SzpfRQ~099kxl5sk7Eqi7GxiY5mGLnL239K94O5WXBA2ka8OGLZ0g86o85902PayRMpbfLYqNwQRICzCtslRweCZkGJ9GLuqMI~RNbpCyExyR-9XjvvQsynIXk1G3TnkyKGClC6MCAyerEdlp5PcJhw31CGBOBa2acf4Ai3f0fnWLEJMlDA9lvRIcMyft2h7yxaGPaZKyvtpYxt3JU9mUzWaGF~R3vzJI7puXubj4yqfkkZrQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
   },
   {
     "id": 4,
-    "name": "Лосось в соусе терияки",
-    "duration": 700,
-    "favorites": [
-      {
-        "username": "anonymous"
-      },
-      {
-        "username": "john"
-      }
-    ],
-    "photo": "1.png",
-    "ingredients": [
-      {
-        "name": "Соевый соус",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Вода",
-        "quantity": "8",
-        "unit": "ст. ложек"
-      },
-      {
-        "name": "Мёд",
-        "quantity": "3",
-        "unit": "ст. ложки"
-      }
-    ],
-    "cookingSteps": [
-      {
-        "order": 1,
-        "step": "В маленькой кастрюле соедините соевый соус, 6 столовых ложек воды, мёд, сахар, измельчённый чеснок, имбирь и лимонный сок.",
-        "duration": "06:00",
-        "status": null
-      },
-      {
-        "order": 2,
-        "step": "Поставьте на средний огонь и, помешивая, доведите до лёгкого кипения.",
-        "duration": "07:00",
-        "status": null
-      },
-      {
-        "order": 3,
-        "step": "Смешайте оставшуюся воду с крахмалом. Добавьте в кастрюлю и перемешайте.",
-        "duration": "06:00",
-        "status": null
-      }
-    ],
-    "comments": [
-      {
-        "author": "anna_obraztsova",
-        "avatar": "assets/images/avatar_1.png",
-        "date": "25.05.2022",
-        "comment": "Я не большой любитель рыбы, но решила приготовить по этому рецепту и просто влюбилась!",
-        "image": "assets/images/comment_image_1.png"
-      },
-      {
-        "author": "Реми",
-        "avatar": "assets/images/avatar_2.png",
-        "date": "05.06.2022",
-        "comment": "Я думаю, что если я — это то, что я ем, то мусор я есть не буду! Папа считал, что: «еда — это бензин. Будешь привередничать, не заправишь бак — мотор сдохнет. Так что заткнись и жри!»",
-        "image": ""
-      },
-      {
-        "author": "Антуан Эго",
-        "avatar": "assets/images/avatar_3.png",
-        "date": "26.06.2022",
-        "comment": "Я вовсе не любитель, я профессионал. Если еда так себе, я её не глотаю!",
-        "image": ""
-      }
-    ]
+    "name": "Тосты с голубикой и бананом",
+    "duration": 45,
+    "photo": "https://s3-alpha-sig.figma.com/img/ed63/aee5/5f3c5badf56fd663f1fb0f2676cf61ed?Expires=1668988800&Signature=QzMs0EWi~MoFCSR8t~cSccQ1pgIM9XAVWAdSEf3hIdRXUY9hm-WUyI6Spklwah-g3ho9g-uR3jTIunlfRgJ2gzy5CMdVrnLv4XV588buzfB3lNCrDINt3LzohOfPacJRiFdSc2Y2uLwT2zCkpdgtzyttzgCYNrEEJDob5zixJehSHzzZqnoRiaPVSfhMERDNs~9qCkIN9DGLOyahkqZE5EzymPR66Q-6l2Q3xU6y4ktnvw4tLKPRJ1xVLz-k684Pch-5Z5p-wweADMsU5maTM5Z5slnkLKyzyqtO6D~0LEdZ1XoHtfkBVqTFxomviU40DFYUeTj-yG3EyNPIekqjJw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+  },
+  {
+    "id": 5,
+    "name": "Паста с морепродуктами",
+    "duration": 25,
+    "photo": "https://s3-alpha-sig.figma.com/img/9022/f5fb/234096330f0e6de18624f7f69747fd8d?Expires=1668988800&Signature=F2m7CjJz-krUxuoYy4XPHUpVkyLW3D62crCH0T2dBcfwXpJyPvvDR0Z2RUkL5ej8S4enRSa2JuUFjD0CPbXnfGPEr6woqI1hv91JPh3q2Jzl2Bo7dZ3iVV5HjdGd0impkOzaObQZnqrPO~kRSqNz9HdUiqjFA3c-4xBgyIf~Pk5PVEePRCPUeQTry-m~wByISYochkwQWupMjceaFHSpARcynfZWt-KuY96YiNG3COzb16RjDTGDqP3aCLHHeKkB-EFANzDprVoBS734HM8GPheZln4h6xXgY5aA3-jdg8wsgKZA5VmBDae1h9dZRVsXYLpK34N2-Y5pj1rOKwMhVA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+  },
+  {
+    "id": 6,
+    "name": "Бургер с двумя котлетами",
+    "duration": 60,
+    "photo": "https://s3-alpha-sig.figma.com/img/e585/4df9/3897bbf4349aec89d4a65d365bee9ff5?Expires=1668988800&Signature=a1d7gigAJRbCT7ISAiqV2vCCH2ZREXGDWdBDE14skytoty1js8fXypG2KGnMc-~RxTLJTgZIPfT0JW69Q1tCaeJ8vXv6RYGGgPR4jP8hpOXl0MKSWB3TS35DvZw2XnPQyKFC68qqdZbZ0hzQ2EX35n28VTqjSCkH4kEme90uqoU9LZDHxCZR2bqk2U2leAUcTE~dvzZVShfJgn9T9tRUswOpFCQ-N8sgNC1fFh1NoJgLnhJ~5messu7ErFWTISTW88kGvT70g7wSXZN~9OFuwMhIr9nL6wsQQHLW4zIijK2AnOkofJTaf7kgU0wUaTmsho1AxGn7Hpjc3krr-t3b9A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
+  },
+  {
+    "id": 7,
+    "name": "Пицца Маргарита домашняя",
+    "duration": 25,
+    "photo": "https://s3-alpha-sig.figma.com/img/fcae/f476/219ed7f987f3f82550c993f4e63e61d8?Expires=1668988800&Signature=huKGdQLpcFEf228~6sWbx2diGdw6k56zD5hqw~ZKyduzddasqEZV9dmSThU-hWjGt4ygr7ALMg0USe9Oo34iEkPYD-3rPPvTxL7ehHqhQDMIaa8yCjXHtTr5oPQVEhdXbtvXqk4TaoM~cJOQC193gm~lvP-rkn9w0r69pQI2KqLbaW-kvGw6SbMsbtgmuMGzitJt6efUrWQA0oZIJ7XQTzuahfF2sr7TalwZyjhCBz9mJllwKBAJk5YRpiDk053j48mWaq02Z3dq76uoah4aYGz9hAe-BZ6o8jJnPhL3YqGh-Xe4SfQSHftr8klbqf~RIGHYn6jWY4tvTryPNVhbcQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
   }
 ]
