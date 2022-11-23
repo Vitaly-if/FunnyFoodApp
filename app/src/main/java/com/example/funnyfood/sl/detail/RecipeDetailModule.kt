@@ -26,7 +26,7 @@ class RecipeDetailModule(private val coreModule: CoreModule) : BaseModule<Recipe
             getRecipesDetailMapper(),
             getRecipesDetailCommunication(),
             coreModule.navigator,
-            coreModule.dispatchers
+            coreModule.navigationCommunication
         )
     }
 
